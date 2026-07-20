@@ -173,24 +173,27 @@ button {
   min-height: 72px;
 }
 
-.logo {
-  display: inline-flex;
+.site-header__inner > .col-6 {
+  display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  font-size: 1.125rem;
-  letter-spacing: -0.02em;
 }
 
-.logo__mark {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  background: linear-gradient(
-    135deg,
-    var(--persian-blue) 0%,
-    var(--electric-pink) 100%
-  );
+.logo {
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.logo__image {
+  display: block;
+  width: auto;
+  height: 28px;
+}
+
+@media (min-width: 768px) {
+  .logo__image {
+    height: 32px;
+  }
 }
 
 .site-header__aside {
@@ -549,4 +552,98 @@ button {
   .site-footer__meta {
     text-align: right;
   }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Password gate                                                              */
+/* -------------------------------------------------------------------------- */
+
+.gate {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  background:
+    radial-gradient(
+      ellipse 80% 60% at 10% 0%,
+      rgba(7, 42, 200, 0.08),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 90% 100%,
+      rgba(231, 71, 153, 0.07),
+      transparent 50%
+    ),
+    var(--color-bg);
+}
+
+.gate__panel {
+  width: min(100%, 400px);
+  padding: 36px 32px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.gate__logo {
+  margin-bottom: 28px;
+}
+
+.gate__title {
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.gate__lead {
+  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  margin-bottom: 24px;
+}
+
+.gate__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gate__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.gate__input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.gate__input:focus {
+  outline: none;
+  border-color: var(--color-action);
+  box-shadow: 0 0 0 3px rgba(7, 42, 200, 0.15);
+}
+
+.gate__input[aria-invalid="true"] {
+  border-color: var(--electric-pink);
+}
+
+.gate__error {
+  font-size: 0.875rem;
+  color: var(--electric-pink);
+}
+
+.gate__submit {
+  width: 100%;
+  margin-top: 8px;
 }

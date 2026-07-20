@@ -1,0 +1,83 @@
+{
+  "meta": {
+    "title": "Panama",
+    "description": "Panama — une expérience landing ciblée."
+  },
+  "brand": {
+    "name": "Panama",
+    "homeLabel": "Accueil Panama",
+    "logoSrc": "/images/Panama-logo-cropped.svg"
+  },
+  "nav": {
+    "ariaLabel": "Navigation principale",
+    "links": [
+      { "label": "Technologie", "href": "#technologie" },
+      { "label": "Applications", "href": "#applications" }
+    ],
+    "cta": { "label": "Contactez-nous", "href": "#contact" }
+  },
+  "hero": {
+    "eyebrow": "Bienvenue",
+    "title": "Construisez avec clarté sur Panama.",
+    "lead": "Une base one-page responsive sur une grille 12 colonnes — prête pour GitHub et un déploiement Vercel en un clic.",
+    "primaryCta": { "label": "Démarrer un projet", "href": "#contact" },
+    "secondaryCta": { "label": "Voir la technologie", "href": "#technologie" },
+    "codeSnippet": "// panama.config.ts\nexport default {\n  name: \"Panama\",\n  grid: { columns: 12, gutter: \"20px\" },\n  theme: {\n    action: \"var(--persian-blue)\",\n    surface: \"var(--platinum)\",\n  },\n};"
+  },
+  "technologie": {
+    "eyebrow": "Technologie",
+    "title": "Tout en un seul scroll",
+    "lead": "Typographie, couleur et mise en page dans une seule feuille de style — du HTML sémantique et du CSS, sans classes utilitaires.",
+    "items": [
+      {
+        "icon": "12",
+        "iconTone": "blue",
+        "title": "Système de grille",
+        "text": "Douze colonnes avec un gutter de 20px, empilées proprement sur petit écran et ouvertes sur tablette et desktop."
+      },
+      {
+        "icon": "Aa",
+        "iconTone": "pink",
+        "title": "Typographie Geist",
+        "text": "Geist et Geist Mono via Fontsource, auto-hébergées avec l'app pour des performances constantes."
+      },
+      {
+        "icon": "▲",
+        "iconTone": "green",
+        "title": "Prêt à déployer",
+        "text": "Poussez sur GitHub et connectez le dépôt sur Vercel — aucune config supplémentaire pour un build Next.js standard."
+      }
+    ]
+  },
+  "applications": {
+    "eyebrow": "Applications",
+    "title": "Des usages concrets",
+    "lead": "Panama s'adapte aux parcours produit, marketing et documentation — une base claire pour vos interfaces.",
+    "items": [
+      {
+        "title": "Sites produit",
+        "text": "Présentez votre offre avec une structure lisible, du hero aux sections de preuve."
+      },
+      {
+        "title": "Landing pages",
+        "text": "Une page unique, des ancres nettes, un CTA contact toujours à portée."
+      },
+      {
+        "title": "Documentation légère",
+        "text": "Expliquez votre technologie sans surcharge visuelle ni empilement de cartes inutiles."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Prêts quand vous l'êtes",
+    "text": "Remplacez cette section par votre formulaire d'inscription, liste d'attente ou lien de contact. La structure reste la même.",
+    "primaryCta": {
+      "label": "Nous écrire",
+      "href": "mailto:hello@example.com"
+    },
+    "secondaryCta": { "label": "Retour en haut", "href": "#top" }
+  },
+  "footer": {
+    "note": "Non indexé par les moteurs de recherche"
+  }
+}

@@ -8,6 +8,10 @@ One-page Next.js landing site for GitHub and [Vercel](https://vercel.com) deploy
 - Single global stylesheet: `src/app/globals.css`
 - [Geist](https://fontsource.org/fonts/geist) and [Geist Mono](https://fontsource.org/fonts/geist-mono) via Fontsource (`@fontsource-variable/geist`)
 
+## Editorial content
+
+All site copy (meta, nav, hero, features, CTA, footer) lives in `src/data/content.json`. Edit that file to update wording without touching page markup. The page (`src/app/page.tsx`) and layout (`src/app/layout.tsx`) import from it.
+
 ## Development
 
 ```bash
