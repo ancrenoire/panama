@@ -34,6 +34,8 @@
 
   --shadow-soft: 0 12px 40px rgba(1, 7, 32, 0.06);
   --transition: 180ms ease;
+
+  --header-height: 72px;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -51,6 +53,7 @@
 html {
   height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
 body {
@@ -160,22 +163,35 @@ button {
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
   background: color-mix(in srgb, var(--platinum) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--color-border);
 }
 
+@media (min-width: 768px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
 .site-header__inner {
+  display: flex;
   align-items: center;
-  min-height: 72px;
+  justify-content: space-between;
+  min-height: var(--header-height);
 }
 
 .site-header__inner > .col-6 {
   display: flex;
   align-items: center;
+}
+
+@media (min-width: 768px) {
+  .site-header__inner > .col-6 {
+    flex: 1;
+  }
 }
 
 .logo {
@@ -333,7 +349,16 @@ button {
 /* -------------------------------------------------------------------------- */
 
 .hero {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  min-height: 560px;
   padding-block: 64px 48px;
+}
+
+.hero > .grid {
+  width: 100%;
+  align-items: center;
 }
 
 @media (min-width: 768px) {

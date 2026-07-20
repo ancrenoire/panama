@@ -38,8 +38,7 @@ export default function Home() {
       <main id="top">
         <section className="hero" aria-labelledby="hero-heading">
           <div className="grid">
-            <div className="col-5">
-              <p className="eyebrow">{hero.eyebrow}</p>
+            <div className="col-7">
               <h1 id="hero-heading" className="hero__title">
                 {hero.title}
               </h1>
@@ -53,7 +52,7 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="col-7 hero__visual">
+            <div className="col-5 hero__visual">
               <div className="hero-card">
                 <div className="hero-card__bar" aria-hidden>
                   <span className="hero-card__dot hero-card__dot--pink" />

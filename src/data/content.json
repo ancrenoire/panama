@@ -11,17 +11,32 @@
   "nav": {
     "ariaLabel": "Navigation principale",
     "links": [
-      { "label": "Technologie", "href": "#technologie" },
-      { "label": "Applications", "href": "#applications" }
+      {
+        "label": "Technologie",
+        "href": "#technologie"
+      },
+      {
+        "label": "Applications",
+        "href": "#applications"
+      }
     ],
-    "cta": { "label": "Contactez-nous", "href": "#contact" }
+    "cta": {
+      "label": "Contactez-nous",
+      "href": "#contact"
+    }
   },
   "hero": {
     "eyebrow": "Bienvenue",
-    "title": "Construisez avec clarté sur Panama.",
-    "lead": "Une base one-page responsive sur une grille 12 colonnes — prête pour GitHub et un déploiement Vercel en un clic.",
-    "primaryCta": { "label": "Démarrer un projet", "href": "#contact" },
-    "secondaryCta": { "label": "Voir la technologie", "href": "#technologie" },
+    "title": "Transférez des motifs complexes avec une précision inégalée",
+    "lead": "PANAMA est un procédé de micro et nano-fabrication qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau, sans compromis sur la qualité.",
+    "primaryCta": {
+      "label": "Démarrer un projet",
+      "href": "#contact"
+    },
+    "secondaryCta": {
+      "label": "Voir la technologie",
+      "href": "#technologie"
+    },
     "codeSnippet": "// panama.config.ts\nexport default {\n  name: \"Panama\",\n  grid: { columns: 12, gutter: \"20px\" },\n  theme: {\n    action: \"var(--persian-blue)\",\n    surface: \"var(--platinum)\",\n  },\n};"
   },
   "technologie": {
@@ -75,7 +90,10 @@
       "label": "Nous écrire",
       "href": "mailto:hello@example.com"
     },
-    "secondaryCta": { "label": "Retour en haut", "href": "#top" }
+    "secondaryCta": {
+      "label": "Retour en haut",
+      "href": "#top"
+    }
   },
   "footer": {
     "note": "Non indexé par les moteurs de recherche"
