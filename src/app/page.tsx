@@ -1,4 +1,5 @@
 import content from "@/data/content.json";
+import DotGrid from "@/components/DotGrid";
 
 export default function Home() {
   const { brand, nav, hero, technologie, applications, cta, footer } = content;
@@ -65,6 +66,10 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        <section className="dot-grid-section" aria-hidden>
+          <DotGrid />
         </section>
 
         <section
