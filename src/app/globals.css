@@ -377,44 +377,12 @@ button {
   }
 }
 
-.hero-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
+.hero-render {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: var(--radius-lg);
-  padding: 28px;
   box-shadow: var(--shadow-soft);
-}
-
-.hero-card__bar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.hero-card__dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.hero-card__dot--pink {
-  background: var(--electric-pink);
-}
-
-.hero-card__dot--saffron {
-  background: var(--saffron);
-}
-
-.hero-card__dot--malachite {
-  background: var(--malachite);
-}
-
-.hero-card__code {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  line-height: 1.7;
-  color: var(--prussian-blue);
-  white-space: pre-wrap;
 }
 
 /* -------------------------------------------------------------------------- */

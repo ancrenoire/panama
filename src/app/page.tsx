@@ -53,16 +53,13 @@ export default function Home() {
               </div>
             </div>
             <div className="col-5 hero__visual">
-              <div className="hero-card">
-                <div className="hero-card__bar" aria-hidden>
-                  <span className="hero-card__dot hero-card__dot--pink" />
-                  <span className="hero-card__dot hero-card__dot--saffron" />
-                  <span className="hero-card__dot hero-card__dot--malachite" />
-                </div>
-                <pre className="hero-card__code">
-                  <code>{hero.codeSnippet}</code>
-                </pre>
-              </div>
+              <img
+                className="hero-render"
+                src="/images/renders/panama-r-1.png"
+                alt={hero.title}
+                width={1024}
+                height={1024}
+              />
             </div>
           </div>
         </section>

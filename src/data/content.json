@@ -36,8 +36,7 @@
     "secondaryCta": {
       "label": "Voir la technologie",
       "href": "#technologie"
-    },
-    "codeSnippet": "// panama.config.ts\nexport default {\n  name: \"Panama\",\n  grid: { columns: 12, gutter: \"20px\" },\n  theme: {\n    action: \"var(--persian-blue)\",\n    surface: \"var(--platinum)\",\n  },\n};"
+    }
   },
   "technologie": {
     "eyebrow": "Technologie",
