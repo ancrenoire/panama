@@ -245,9 +245,10 @@ button {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--persian-blue);
+  margin-bottom: 12px;
 }
 
 .hero__title {
