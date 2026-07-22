@@ -1,5 +1,19 @@
 import content from "@/data/content.json";
 import DotGrid from "@/components/DotGrid";
+import Gallery from "@/components/Gallery";
+
+const galleryImages = [
+  "/images/renders/panama-r-1.png",
+  "/images/renders/masonry/image 14.png",
+  "/images/renders/masonry/image 15.png",
+  "/images/renders/masonry/image 16.png",
+  "/images/renders/masonry/image 17.png",
+  "/images/renders/masonry/image 18.png",
+  "/images/renders/masonry/image 19.png",
+  "/images/renders/masonry/image 20.png",
+  "/images/renders/masonry/image 21.png",
+  "/images/renders/masonry/image 22.png",
+];
 
 export default function Home() {
   const { brand, nav, hero, technologie, applications, cta, footer } = content;
@@ -82,13 +96,7 @@ export default function Home() {
         <section className="gallery" aria-label="Galerie">
           <div className="grid">
             <div className="col-12">
-              <div className="masonry">
-                <img
-                  className="masonry__item"
-                  src="/images/renders/panama-r-1.png"
-                  alt={hero.title}
-                />
-              </div>
+              <Gallery images={galleryImages} alt={hero.title} />
             </div>
           </div>
         </section>
