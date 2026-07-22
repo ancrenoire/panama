@@ -53,19 +53,44 @@ export default function Home() {
               </div>
             </div>
             <div className="col-5 hero__visual">
-              <img
-                className="hero-render"
-                src="/images/renders/panama-r-1.png"
-                alt={hero.title}
-                width={1024}
-                height={1024}
-              />
+              <div className="square-media">
+                <video
+                  className="square-media__video"
+                  src="/images/renders/0001-0132.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              </div>
             </div>
           </div>
         </section>
 
         <section className="dot-grid-section" aria-hidden>
           <DotGrid />
+          <video
+            className="dot-grid-section__video"
+            src="/images/renders/0001-0132-169.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
+        </section>
+
+        <section className="gallery" aria-label="Galerie">
+          <div className="grid">
+            <div className="col-12">
+              <div className="masonry">
+                <img
+                  className="masonry__item"
+                  src="/images/renders/panama-r-1.png"
+                  alt={hero.title}
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         <section
