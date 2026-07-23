@@ -365,12 +365,39 @@ button {
 /* -------------------------------------------------------------------------- */
 
 .hero {
+  position: relative;
   display: flex;
   align-items: center;
   padding-block: 96px ;
 }
 
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Very light, almost invisible primary-blue dot field behind the hero. */
+  opacity: 0.07;
+}
+
+/* Platinum wash over the dot field: opaque at the top-left, fading to fully
+   transparent toward the bottom-right, so the animation gradually reveals. */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    var(--platinum) 0%,
+    rgba(244, 246, 250, 0) 80%,
+    rgba(244, 246, 250, 0) 100%
+  );
+}
+
 .hero > .grid {
+  position: relative;
+  z-index: 1;
   width: 100%;
   align-items: center;
 }
@@ -432,10 +459,13 @@ button {
 }
 
 .intro-card__title {
-  font-family: var(--font-display);
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-family: var(--font-mono);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
   font-weight: 600;
-  letter-spacing: -0.01em;
+  line-height: 1.6;
+  color: var(--color-action);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* -------------------------------------------------------------------------- */

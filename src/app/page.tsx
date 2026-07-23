@@ -52,6 +52,9 @@ export default function Home() {
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-heading">
+          <div className="hero__bg" aria-hidden>
+            <DotGrid variant="hero" fieldStart={0} maxSize={7} spacing={12} />
+          </div>
           <div className="grid">
             <div className="col-7">
               <h1 id="hero-heading" className="hero__title">

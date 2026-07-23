@@ -12,9 +12,6 @@ import {
 
 const SPACING = 30;
 const GAP = 4;
-// A dot's rendered diameter is never allowed to exceed this, so dots on the
-// grid (SPACING apart) can never overlap, even at full pointer magnification.
-const MAX_DIAMETER = SPACING - GAP;
 const MIN_SIZE = 3;
 const MAX_SIZE = 24;
 // Macro "rectangle" grid: every block of MACRO_COLS x MACRO_ROWS cells shares
@@ -89,6 +86,7 @@ function Dot({
   bcy,
   size,
   opacity,
+  maxDiameter,
   pointerX,
   pointerY,
 }: {
@@ -98,10 +96,11 @@ function Dot({
   bcy: number;
   size: number;
   opacity: number;
+  maxDiameter: number;
   pointerX: MotionValue<number>;
   pointerY: MotionValue<number>;
 }) {
-  const maxScale = MAX_DIAMETER / size;
+  const maxScale = maxDiameter / size;
 
   // Influence is measured from the block centre, so every dot in a macro zone
   // shares the same value and the whole rectangle reacts as a unit.
@@ -136,7 +135,20 @@ function Dot({
   );
 }
 
-export default function DotGrid() {
+export default function DotGrid({
+  variant,
+  fieldStart = FIELD_START,
+  maxSize = MAX_SIZE,
+  spacing = SPACING,
+}: {
+  variant?: string;
+  fieldStart?: number;
+  maxSize?: number;
+  spacing?: number;
+} = {}) {
+  // A dot's rendered diameter is never allowed to exceed this, so dots on the
+  // grid (spacing apart) can never overlap, even at full pointer magnification.
+  const maxDiameter = spacing - GAP;
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
   const reduceMotion = useReducedMotion();
@@ -163,17 +175,17 @@ export default function DotGrid() {
     const { width, height } = size;
     if (width === 0 || height === 0) return [];
 
-    const cols = Math.floor(width / SPACING);
-    const rows = Math.floor(height / SPACING);
-    const offsetX = (width - (cols - 1) * SPACING) / 2;
-    const offsetY = (height - (rows - 1) * SPACING) / 2;
+    const cols = Math.floor(width / spacing);
+    const rows = Math.floor(height / spacing);
+    const offsetX = (width - (cols - 1) * spacing) / 2;
+    const offsetY = (height - (rows - 1) * spacing) / 2;
 
-    const fieldLeft = width * FIELD_START;
+    const fieldLeft = width * fieldStart;
 
     const result: DotData[] = [];
     for (let row = 0; row < rows; row++) {
       for (let col = 0; col < cols; col++) {
-        const cx = offsetX + col * SPACING;
+        const cx = offsetX + col * spacing;
         if (cx < fieldLeft) continue;
         const v = blockValue(col, row);
         const blockCol =
@@ -183,16 +195,16 @@ export default function DotGrid() {
         result.push({
           key: `${col}-${row}`,
           cx,
-          cy: offsetY + row * SPACING,
-          bcx: offsetX + blockCol * SPACING,
-          bcy: offsetY + blockRow * SPACING,
-          size: MIN_SIZE + v * (MAX_SIZE - MIN_SIZE),
+          cy: offsetY + row * spacing,
+          bcx: offsetX + blockCol * spacing,
+          bcy: offsetY + blockRow * spacing,
+          size: MIN_SIZE + v * (maxSize - MIN_SIZE),
           opacity: MIN_OPACITY + v * (1 - MIN_OPACITY),
         });
       }
     }
     return result;
-  }, [size]);
+  }, [size, fieldStart, maxSize, spacing]);
 
   const handlePointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (reduceMotion) return;
@@ -209,7 +221,7 @@ export default function DotGrid() {
   return (
     <div
       ref={containerRef}
-      className="dot-grid"
+      className={variant ? `dot-grid dot-grid--${variant}` : "dot-grid"}
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
     >
@@ -236,6 +248,7 @@ export default function DotGrid() {
               bcy={dot.bcy}
               size={dot.size}
               opacity={dot.opacity}
+              maxDiameter={maxDiameter}
               pointerX={springX}
               pointerY={springY}
             />
