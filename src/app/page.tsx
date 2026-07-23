@@ -16,7 +16,8 @@ const galleryImages = [
 ];
 
 export default function Home() {
-  const { brand, nav, hero, technologie, applications, cta, footer } = content;
+  const { brand, nav, hero, intro, technologie, applications, cta, footer } =
+    content;
   const year = new Date().getFullYear();
 
   return (
@@ -70,7 +71,7 @@ export default function Home() {
               <div className="square-media">
                 <video
                   className="square-media__video"
-                  src="/images/renders/0001-0132.mp4"
+                  src="/images/renders/0001-0252.mp4"
                   autoPlay
                   muted
                   loop
@@ -78,6 +79,31 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="intro" aria-labelledby="intro-heading">
+          <div className="grid">
+            <div className="col-12 intro__head">
+              <img
+                className="intro__icon"
+                src={intro.icon}
+                alt=""
+                width={64}
+                height={64}
+              />
+              <h2 id="intro-heading" className="section-title intro__title">
+                {intro.title}
+              </h2>
+            </div>
+
+            {intro.cards.map((card) => (
+              <div key={card.title} className="col-12 col-6">
+                <div className="intro-card">
+                  <h3 className="intro-card__title">{card.title}</h3>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -161,25 +187,20 @@ export default function Home() {
           className="cta-band"
           aria-labelledby="cta-heading"
         >
-          <div className="grid">
-            <div className="col-12 cta-band__inner grid">
-              <div className="col-12 col-7">
-                <h2 id="cta-heading" className="cta-band__title">
-                  {cta.title}
-                </h2>
-                <p className="cta-band__text">{cta.text}</p>
-              </div>
-              <div className="col-12 col-5 cta-band__actions">
-                <a className="btn btn--on-dark" href={cta.primaryCta.href}>
-                  {cta.primaryCta.label}
-                </a>
-                <a
-                  className="btn btn--outline-light"
-                  href={cta.secondaryCta.href}
-                >
-                  {cta.secondaryCta.label}
-                </a>
-              </div>
+          <div className="grid cta-band__inner">
+            <div className="col-12 col-7">
+              <h2 id="cta-heading" className="cta-band__title">
+                {cta.title}
+              </h2>
+              <p className="cta-band__text">{cta.text}</p>
+            </div>
+            <div className="col-12 col-5 cta-band__actions">
+              <a className="btn btn--on-dark" href={cta.primaryCta.href}>
+                {cta.primaryCta.label}
+              </a>
+              <a className="btn btn--outline-light" href={cta.secondaryCta.href}>
+                {cta.secondaryCta.label}
+              </a>
             </div>
           </div>
         </section>

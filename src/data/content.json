@@ -27,7 +27,7 @@
   },
   "hero": {
     "eyebrow": "Bienvenue",
-    "title": "Transférez des motifs complexes avec une précision inégalée",
+    "title": "Le micro-transfert réinventé",
     "lead": "PANAMA est un procédé de micro et nano-fabrication qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau, sans compromis sur la qualité.",
     "primaryCta": {
       "label": "Démarrer un projet",
@@ -37,6 +37,18 @@
       "label": "Voir la technologie",
       "href": "#technologie"
     }
+  },
+  "intro": {
+    "title": "Transférez des motifs complexes avec une précision inégalée",
+    "icon": "/images/Panama-star.svg",
+    "cards": [
+      {
+        "title": "Design"
+      },
+      {
+        "title": "Transfert"
+      }
+    ]
   },
   "technologie": {
     "eyebrow": "Technologie",
