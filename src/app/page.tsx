@@ -2,6 +2,7 @@ import content from "@/data/content.json";
 import DotGrid from "@/components/DotGrid";
 import Gallery from "@/components/Gallery";
 import MotifShowcase from "@/components/MotifShowcase";
+import SiteHeader from "@/components/SiteHeader";
 
 const galleryImages = [
   "/images/renders/panama-r-1.png",
@@ -26,70 +27,36 @@ export default function Home() {
     technologie,
     applications,
     cta,
-    footer,
   } = content;
   const year = new Date().getFullYear();
 
   return (
     <div className="site">
-      <header className="site-header">
-        <div className="grid site-header__inner">
-          <div className="col-6">
-            <a className="logo" href="#top" aria-label={brand.homeLabel}>
-              <img
-                className="logo__image"
-                src="/images/Panama-logo-cropped-light.svg"
-                alt={brand.name}
-                width={140}
-                height={32}
-              />
-            </a>
-          </div>
-          <div className="col-6 site-header__aside">
-            <nav className="site-nav" aria-label={nav.ariaLabel}>
-              {nav.links.map((link) => (
-                <a key={link.href} href={link.href}>
-                  {link.label}
-                </a>
-              ))}
-            </nav>
-            <a className="btn btn--primary btn--sm" href={nav.cta.href}>
-              {nav.cta.label}
-            </a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader brand={brand} nav={nav} />
 
       <main id="top">
         <section className="hero" aria-labelledby="hero-heading">
           <div className="hero__bg" aria-hidden>
-            <DotGrid variant="hero" fieldStart={0} maxSize={7} spacing={12} />
+            <video
+              className="hero__video"
+              src="/images/renders/0001-0252-2.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
           <div className="grid">
-            <div className="col-7">
+            <div className="col-12 hero__content">
               <h1 id="hero-heading" className="hero__title">
                 {hero.title}
               </h1>
               <p className="hero__lead">{hero.lead}</p>
               <div className="hero__actions">
-                <a className="btn btn--primary" href={hero.primaryCta.href}>
-                  {hero.primaryCta.label}
-                </a>
                 <a className="btn btn--ghost" href={hero.secondaryCta.href}>
                   {hero.secondaryCta.label}
                 </a>
               </div>
-            </div>
-          </div>
-          <div className="hero__visual" aria-hidden>
-            <div className="square-media">
-              <video
-                className="square-media__video"
-                src="/images/renders/0001-0252.mp4"
-                autoPlay
-                muted
-                playsInline
-              />
             </div>
           </div>
         </section>
@@ -202,6 +169,13 @@ export default function Home() {
           </div>
         </section>
 
+      </main>
+
+      <div className="closing">
+        <div className="closing__bg" aria-hidden>
+          <DotGrid variant="closing" fieldStart={0} maxSize={7} spacing={12} />
+        </div>
+
         <section
           id="contact"
           className="cta-band"
@@ -209,6 +183,14 @@ export default function Home() {
         >
           <div className="grid cta-band__inner">
             <div className="col-12 col-7">
+              <img
+                className="cta-band__star"
+                src={motifs.icon}
+                alt=""
+                aria-hidden
+                width={40}
+                height={40}
+              />
               <h2 id="cta-heading" className="cta-band__title">
                 {cta.title}
               </h2>
@@ -224,19 +206,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-      </main>
 
-      <footer className="site-footer">
-        <div className="grid site-footer__inner">
-          <div className="col-6">
-            <span className="site-footer__brand">{brand.name}</span>
-            <p className="mono-label">© {year}</p>
+        <footer className="site-footer">
+          <div className="grid site-footer__inner">
+            <div className="col-6">
+              <span className="site-footer__brand">{brand.name}</span>
+              <p className="mono-label">© {year}</p>
+            </div>
+            <div className="col-6 site-footer__meta" />
           </div>
-          <div className="col-6 site-footer__meta">
-            <p className="mono-label">{footer.note}</p>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }

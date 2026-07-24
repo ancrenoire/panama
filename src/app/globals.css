@@ -176,18 +176,22 @@ button {
 }
 
 .site-header {
-  background: color-mix(in srgb, var(--prussian-blue) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--white);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  backdrop-filter: none;
+  transition: background var(--transition), border-color var(--transition),
+    backdrop-filter var(--transition);
 }
 
-@media (min-width: 768px) {
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
+.site-header--scrolled {
+  background: color-mix(in srgb, var(--platinum) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom-color: var(--color-border);
 }
 
 .site-header__inner {
@@ -222,7 +226,7 @@ button {
 
 @media (min-width: 768px) {
   .logo__image {
-    height: 32px;
+    height: 30px;
   }
 }
 
@@ -238,11 +242,11 @@ button {
   align-items: center;
   gap: 28px;
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.66);
+  color: var(--color-text-muted);
 }
 
 .site-nav a:hover {
-  color: var(--white);
+  color: var(--color-text);
 }
 
 @media (min-width: 768px) {
@@ -278,7 +282,7 @@ button {
   margin-top: 20px;
   max-width: 42ch;
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-muted);
 }
 
 .section-title {
@@ -311,8 +315,8 @@ button {
   justify-content: center;
   gap: 8px;
   padding: 14px 22px;
-  border-radius: 3px;
-  font-weight: 500;
+  border-radius: 999px;
+  font-weight: 600;
   font-size: 0.9375rem;
   transition: background var(--transition), color var(--transition),
     transform var(--transition);
@@ -367,40 +371,26 @@ button {
 
 .hero {
   position: relative;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  padding-block: 96px ;
-  background: var(--prussian-blue);
-  color: var(--white);
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  padding-block: 160px 96px;
+  overflow: hidden;
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Light dot field standing out against the dark hero background. */
-  opacity: 0.18;
 }
 
-/* Prussian wash over the dot field: opaque at the top-left, fading to fully
-   transparent toward the bottom-right, so the animation gradually reveals. */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: linear-gradient(
-    135deg,
-    var(--prussian-blue) 0%,
-    rgba(1, 7, 32, 0) 80%,
-    rgba(1, 7, 32, 0) 100%
-  );
-}
-
-/* Light dots so the field reads on the dark hero. */
-.dot-grid--hero .dot {
-  background: var(--white);
+.hero__video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero > .grid {
@@ -410,33 +400,18 @@ button {
   align-items: center;
 }
 
-@media (min-width: 768px) {
-  .hero {
-    padding-block: 156px ;
-  }
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.hero__visual {
-  margin-top: 40px;
-  padding-inline: 24px;
+.hero__lead {
+  margin-inline: auto;
 }
 
-@media (min-width: 768px) {
-  .hero__visual {
-    /* Square that fills the right third of the viewport, flush to the edge. */
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 33.333vw;
-    margin-top: 0;
-    padding-inline: 0;
-    z-index: 2;
-  }
-
-  .hero__visual .square-media {
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-  }
+.hero__actions {
+  justify-content: center;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -475,28 +450,21 @@ button {
 }
 
 .motif__content {
-  position: relative;
-  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .motif__star {
-  position: absolute;
-  top: -8px;
-  right: 0;
   width: 48px;
   height: 48px;
-}
-
-@media (min-width: 900px) {
-  .motif__star {
-    top: -24px;
-  }
+  margin-bottom: 24px;
 }
 
 .motif__eyebrow {
   font-family: var(--font-sans);
   font-weight: 300;
-  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  font-size: 28px;
   line-height: 1.1;
   color: var(--color-text);
 }
@@ -504,58 +472,51 @@ button {
 .motif__title {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(1.625rem, 2.6vw, 2rem);
+  font-size: 32px;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .motif-list {
   list-style: none;
-  margin-top: 28px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
 }
 
 .motif-list__btn {
   display: grid;
-  grid-template-columns: 90px 1fr auto;
+  grid-template-columns: 64px 120px auto;
   align-items: center;
-  gap: 12px;
-  width: 100%;
-  padding: 6px 0;
+  gap: 15px;
+  padding: 11px 0;
   text-align: left;
-  color: var(--color-text-muted);
-  transition: color var(--transition);
 }
 
 .motif-list__label {
-  font-size: 1.4375rem;
+  font-size: 16px;
   font-weight: 300;
+  color: var(--color-text-muted);
   transition: font-weight var(--transition), color var(--transition);
 }
 
 .motif-list__line {
-  height: 1px;
-  background: currentColor;
-  opacity: 0;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: opacity var(--transition), transform var(--transition);
+  height: 2px;
+  color: var(--rosy-granite);
+  background-image: radial-gradient(currentColor 1px, transparent 1.2px);
+  background-size: 6px 2px;
+  background-repeat: repeat-x;
+  background-position: left center;
 }
 
 .motif-list__measure {
-  font-size: 1.4375rem;
-  font-weight: 600;
-  color: var(--prussian-blue);
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
-.motif-list__btn.is-active {
-  color: var(--color-text);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  transition: font-weight var(--transition), color var(--transition);
 }
 
 .motif-list__btn.is-active .motif-list__label {
@@ -563,14 +524,9 @@ button {
   color: var(--color-text);
 }
 
-.motif-list__btn.is-active .motif-list__line {
-  opacity: 1;
-  transform: scaleX(1);
-  color: var(--prussian-blue);
-}
-
 .motif-list__btn.is-active .motif-list__measure {
-  opacity: 1;
+  font-weight: 600;
+  color: var(--prussian-blue);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -840,13 +796,11 @@ button {
   height: 100%;
 }
 
-.dot {
+.dot-grid__canvas {
   position: absolute;
-  display: block;
-  border-radius: 50%;
-  background: var(--persian-blue);
-  transform-origin: center;
-  will-change: transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
 }
 
@@ -920,8 +874,40 @@ button {
 /* CTA band                                                                   */
 /* -------------------------------------------------------------------------- */
 
-.cta-band {
+/* Shared dark, animated backdrop spanning the CTA band and footer. */
+.closing {
+  position: relative;
+  overflow: hidden;
   background: var(--prussian-blue);
+  color: var(--white);
+}
+
+.closing__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  /* Light dot field standing out against the dark backdrop. */
+  opacity: 0.18;
+}
+
+/* Prussian wash over the dot field, mirroring the hero reveal. */
+.closing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    var(--prussian-blue) 0%,
+    rgba(1, 7, 32, 0) 80%,
+    rgba(1, 7, 32, 0) 100%
+  );
+}
+
+.cta-band {
+  position: relative;
+  z-index: 1;
   color: var(--white);
   padding-block: 72px;
 }
@@ -934,6 +920,13 @@ button {
   .cta-band {
     padding-block: 96px;
   }
+}
+
+.cta-band__star {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
 }
 
 .cta-band__title {
@@ -986,7 +979,8 @@ button {
 /* -------------------------------------------------------------------------- */
 
 .site-footer {
-  background: var(--prussian-blue);
+  position: relative;
+  z-index: 1;
   color: var(--white);
   padding-block: 28px 40px;
 }

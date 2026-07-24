@@ -21,7 +21,7 @@
       }
     ],
     "cta": {
-      "label": "Contactez-nous",
+      "label": "Démarrer un projet",
       "href": "#contact"
     }
   },
@@ -29,10 +29,6 @@
     "eyebrow": "Bienvenue",
     "title": "Micro-transfert printing",
     "lead": "PANAMA est un procédé de micro et nano-fabrication qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau, sans compromis sur la qualité.",
-    "primaryCta": {
-      "label": "Démarrer un projet",
-      "href": "#contact"
-    },
     "secondaryCta": {
       "label": "Voir la technologie",
       "href": "#technologie"
@@ -45,32 +41,32 @@
     "items": [
       {
         "label": "motif 1",
-        "measure": "300nm",
+        "measure": "300 nm",
         "image": "/images/renders/panama-r-1.png"
       },
       {
         "label": "motif 2",
-        "measure": "500nm",
+        "measure": "400 nm",
         "image": "/images/renders/Panama-rp-0.png"
       },
       {
         "label": "motif 3",
-        "measure": "800nm",
+        "measure": "300 nm",
         "image": "/images/renders/masonry/image 14.png"
       },
       {
         "label": "motif 4",
-        "measure": "1.2µm",
+        "measure": "350 µm",
         "image": "/images/renders/masonry/image 15.png"
       },
       {
         "label": "motif 5",
-        "measure": "2µm",
+        "measure": "650 µm",
         "image": "/images/renders/masonry/image 16.png"
       },
       {
         "label": "motif 6",
-        "measure": "5µm",
+        "measure": "750 µm",
         "image": "/images/renders/masonry/image 17.png"
       }
     ]
@@ -145,8 +141,5 @@
       "label": "Retour en haut",
       "href": "#top"
     }
-  },
-  "footer": {
-    "note": "Non indexé par les moteurs de recherche"
   }
 }
