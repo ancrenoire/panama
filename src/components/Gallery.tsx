@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useState } from "react";
 
+const isVideo = (src: string) => /\.(mp4|webm|ogg)$/i.test(src);
+
 export default function Gallery({
   images,
   alt = "",
@@ -31,9 +33,20 @@ export default function Gallery({
             type="button"
             className="bento__button"
             onClick={() => setActive(src)}
-            aria-label="Agrandir l’image"
+            aria-label={isVideo(src) ? "Agrandir la vidéo" : "Agrandir l’image"}
           >
-            <img className="bento__item" src={src} alt={alt} />
+            {isVideo(src) ? (
+              <video
+                className="bento__item"
+                src={src}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <img className="bento__item" src={src} alt={alt} />
+            )}
           </button>
         ))}
       </div>
@@ -53,12 +66,25 @@ export default function Gallery({
           >
             ×
           </button>
-          <img
-            className="lightbox__image"
-            src={active}
-            alt={alt}
-            onClick={(e) => e.stopPropagation()}
-          />
+          {isVideo(active) ? (
+            <video
+              className="lightbox__image"
+              src={active}
+              autoPlay
+              muted
+              loop
+              controls
+              playsInline
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <img
+              className="lightbox__image"
+              src={active}
+              alt={alt}
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
       )}
     </>

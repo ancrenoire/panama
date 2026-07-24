@@ -769,27 +769,6 @@ button {
 /* Interactive dot grid                                                       */
 /* -------------------------------------------------------------------------- */
 
-.dot-grid-section {
-  position: relative;
-  width: 100%;
-  height: clamp(540px, 68vw, 900px);
-  background: var(--prussian-blue);
-  overflow: hidden;
-}
-
-.dot-grid-section__video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: min(var(--grid-max), calc(100% - 2 * var(--page-inline)));
-  height: auto;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  pointer-events: none;
-  z-index: 2;
-}
-
 .dot-grid {
   position: relative;
   width: 100%;
@@ -868,6 +847,255 @@ button {
   margin-top: 8px;
   font-size: 0.9375rem;
   color: var(--color-text-muted);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Technologie intro                                                          */
+/* -------------------------------------------------------------------------- */
+
+.tech-intro {
+  background: var(--white);
+  padding-block: 96px 48px;
+}
+
+.tech-intro__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.tech-intro__head .section-lead {
+  margin-inline: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Chimie de surface (dark + blue dots)                                       */
+/* -------------------------------------------------------------------------- */
+
+.chimie {
+  position: relative;
+  overflow: hidden;
+  background: var(--prussian-blue);
+  color: var(--white);
+  padding-block: 96px;
+}
+
+.chimie__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.22;
+}
+
+.chimie__inner {
+  position: relative;
+  z-index: 1;
+  row-gap: 40px;
+}
+
+.chimie__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.eyebrow--light {
+  color: var(--saffron);
+}
+
+.chimie__title {
+  color: var(--white);
+}
+
+.chimie__lead {
+  color: rgba(255, 255, 255, 0.72);
+  margin-inline: auto;
+}
+
+.chimie-card {
+  height: 100%;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.chimie-card__title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.chimie-card__text {
+  margin-top: 10px;
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Comparison (au-dela de la lithographie)                                    */
+/* -------------------------------------------------------------------------- */
+
+.comparison {
+  background: var(--white);
+  padding-block: 80px;
+}
+
+.comparison__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.comparison__head .section-lead {
+  margin-inline: auto;
+}
+
+.compare-card {
+  height: 100%;
+  padding: 32px 28px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.compare-card--brand {
+  border-color: rgba(7, 42, 200, 0.35);
+  background: rgba(7, 42, 200, 0.05);
+  box-shadow: var(--shadow-soft);
+}
+
+.compare-card__title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.compare-card--brand .compare-card__title {
+  color: var(--persian-blue);
+}
+
+.compare-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.compare-list__item {
+  position: relative;
+  padding-left: 26px;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.compare-list__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--rosy-granite);
+}
+
+.compare-card--brand .compare-list__item {
+  color: var(--color-text);
+}
+
+.compare-card--brand .compare-list__item::before {
+  background: var(--persian-blue);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Applications (use cases)                                                    */
+/* -------------------------------------------------------------------------- */
+
+.applications {
+  background: var(--white);
+  padding-block: 48px 96px;
+}
+
+.use-case {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-surface);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.use-case:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.use-case__media {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+.use-case__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.use-case__title {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  padding: 20px 24px 0;
+}
+
+.use-case__text {
+  margin-top: 8px;
+  padding: 0 24px 24px;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Gallery page                                                               */
+/* -------------------------------------------------------------------------- */
+
+.gallery-page {
+  background: var(--color-bg);
+}
+
+.gallery-page__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.gallery-page__head .section-lead {
+  margin-inline: auto;
+}
+
+.gallery-page .bento__item {
+  background: var(--prussian-blue);
+}
+
+.site-footer--solid {
+  background: var(--prussian-blue);
 }
 
 /* -------------------------------------------------------------------------- */

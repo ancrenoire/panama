@@ -13,16 +13,20 @@
     "links": [
       {
         "label": "Technologie",
-        "href": "#technologie"
+        "href": "/#technologie"
       },
       {
         "label": "Applications",
-        "href": "#applications"
+        "href": "/#applications"
+      },
+      {
+        "label": "Galerie",
+        "href": "/gallery"
       }
     ],
     "cta": {
       "label": "Démarrer un projet",
-      "href": "#contact"
+      "href": "/#contact"
     }
   },
   "hero": {
@@ -33,6 +37,11 @@
       "label": "Voir la technologie",
       "href": "#technologie"
     }
+  },
+  "technologie": {
+    "eyebrow": "Technologie",
+    "title": "Une technologie de rupture",
+    "lead": "Des motifs complexes au transfert sur tout matériau : découvrez comment PANAMA repense chaque étape de la micro et nano-fabrication."
   },
   "motifs": {
     "eyebrow": "Transférez",
@@ -86,48 +95,97 @@
       }
     ]
   },
-  "technologie": {
-    "eyebrow": "Technologie",
-    "title": "Au-delà de la lithographie",
-    "lead": "La technologie PANAMA est un procédé innovant de micro-fabrication et nano-fabrication destiné à optimiser les étapes de lithographie conventionnelle dans la fabrication de circuits électroniques ou micro-fluidique.",
-    "items": [
+  "chimie": {
+    "eyebrow": "Chimie de surface",
+    "title": "Une accroche maîtrisée à l'échelle moléculaire",
+    "lead": "Remplacez ce texte : décrivez comment la chimie de surface de PANAMA garantit l'adhésion et la fidélité du motif sur des matériaux variés.",
+    "points": [
       {
-        "icon": "12",
-        "iconTone": "blue",
-        "title": "Système de grille",
-        "text": "Douze colonnes avec un gutter de 20px, empilées proprement sur petit écran et ouvertes sur tablette et desktop."
+        "title": "Fonctionnalisation ciblée",
+        "text": "Placeholder — expliquez la préparation de surface qui conditionne le transfert."
       },
       {
-        "icon": "Aa",
-        "iconTone": "pink",
-        "title": "Typographie Geist",
-        "text": "Geist et Geist Mono via Fontsource, auto-hébergées avec l'app pour des performances constantes."
+        "title": "Compatibilité matériaux",
+        "text": "Placeholder — listez les familles de substrats compatibles (polymères, métaux, verre…)."
       },
       {
-        "icon": "▲",
-        "iconTone": "green",
-        "title": "Prêt à déployer",
-        "text": "Poussez sur GitHub et connectez le dépôt sur Vercel — aucune config supplémentaire pour un build Next.js standard."
+        "title": "Adhésion durable",
+        "text": "Placeholder — précisez la tenue mécanique et chimique du motif transféré."
+      }
+    ]
+  },
+  "comparison": {
+    "eyebrow": "Au-delà de la lithographie",
+    "title": "PANAMA face à la lithographie conventionnelle",
+    "lead": "La technologie PANAMA optimise les étapes de lithographie classique pour la fabrication de circuits électroniques ou micro-fluidiques.",
+    "columns": [
+      {
+        "name": "Lithographie conventionnelle",
+        "tone": "muted",
+        "points": [
+          "Placeholder — contrainte sur le choix du substrat.",
+          "Placeholder — étapes multiples en salle blanche.",
+          "Placeholder — coût et délais de prototypage élevés.",
+          "Placeholder — flexibilité limitée sur les géométries."
+        ]
+      },
+      {
+        "name": "PANAMA",
+        "tone": "brand",
+        "points": [
+          "Placeholder — transfert sur n'importe quel matériau.",
+          "Placeholder — design dissocié du transfert.",
+          "Placeholder — prototypage rapide et petites séries.",
+          "Placeholder — résolution nanométrique préservée."
+        ]
       }
     ]
   },
   "applications": {
     "eyebrow": "Applications",
     "title": "Des usages concrets",
-    "lead": "PANAMA s’adresse aux startups, PME, équipes R&D, chercheurs et labos académiques en salle blanche, faisant du prototypage ou petites séries. ",
+    "lead": "PANAMA s’adresse aux startups, PME, équipes R&D, chercheurs et labos académiques en salle blanche, faisant du prototypage ou petites séries.",
     "items": [
       {
-        "title": "Sites produit",
-        "text": "Présentez votre offre avec une structure lisible, du hero aux sections de preuve."
+        "title": "Cas d'usage 1",
+        "text": "Placeholder — décrivez un premier cas d'application concret de la technologie PANAMA.",
+        "image": "/images/renders/masonry/image 18.png"
       },
       {
-        "title": "Landing pages",
-        "text": "Une page unique, des ancres nettes, un CTA contact toujours à portée."
+        "title": "Cas d'usage 2",
+        "text": "Placeholder — décrivez un deuxième cas d'application (secteur, bénéfice, résultat).",
+        "image": "/images/renders/masonry/image 19.png"
       },
       {
-        "title": "Documentation légère",
-        "text": "Expliquez votre technologie sans surcharge visuelle ni empilement de cartes inutiles."
+        "title": "Cas d'usage 3",
+        "text": "Placeholder — décrivez un troisième cas d'application concret.",
+        "image": "/images/renders/masonry/image 20.png"
       }
+    ]
+  },
+  "gallery": {
+    "eyebrow": "Galerie",
+    "title": "Rendus & captures",
+    "lead": "L'ensemble des vidéos et images de la technologie PANAMA.",
+    "videos": [
+      "/images/renders/0001-0252-2.mp4",
+      "/images/renders/0001-0252.mp4",
+      "/images/renders/0001-0132.mp4",
+      "/images/renders/0001-0132-169.mp4",
+      "/images/renders/20plus.mp4"
+    ],
+    "images": [
+      "/images/renders/panama-r-1.png",
+      "/images/renders/Panama-rp-0.png",
+      "/images/renders/masonry/image 14.png",
+      "/images/renders/masonry/image 15.png",
+      "/images/renders/masonry/image 16.png",
+      "/images/renders/masonry/image 17.png",
+      "/images/renders/masonry/image 18.png",
+      "/images/renders/masonry/image 19.png",
+      "/images/renders/masonry/image 20.png",
+      "/images/renders/masonry/image 21.png",
+      "/images/renders/masonry/image 22.png"
     ]
   },
   "cta": {

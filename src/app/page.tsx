@@ -1,30 +1,18 @@
 import content from "@/data/content.json";
 import DotGrid from "@/components/DotGrid";
-import Gallery from "@/components/Gallery";
 import MotifShowcase from "@/components/MotifShowcase";
 import SiteHeader from "@/components/SiteHeader";
-
-const galleryImages = [
-  "/images/renders/panama-r-1.png",
-  "/images/renders/masonry/image 14.png",
-  "/images/renders/masonry/image 15.png",
-  "/images/renders/masonry/image 16.png",
-  "/images/renders/masonry/image 17.png",
-  "/images/renders/masonry/image 18.png",
-  "/images/renders/masonry/image 19.png",
-  "/images/renders/masonry/image 20.png",
-  "/images/renders/masonry/image 21.png",
-  "/images/renders/masonry/image 22.png",
-];
 
 export default function Home() {
   const {
     brand,
     nav,
     hero,
+    technologie,
     motifs,
     process,
-    technologie,
+    chimie,
+    comparison,
     applications,
     cta,
   } = content;
@@ -58,6 +46,23 @@ export default function Home() {
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+
+        {/* 1 — Technologie */}
+        <section
+          id="technologie"
+          className="tech-intro"
+          aria-labelledby="technologie-heading"
+        >
+          <div className="grid">
+            <header className="col-12 tech-intro__head">
+              <p className="eyebrow">{technologie.eyebrow}</p>
+              <h2 id="technologie-heading" className="section-title">
+                {technologie.title}
+              </h2>
+              <p className="section-lead">{technologie.lead}</p>
+            </header>
           </div>
         </section>
 
@@ -95,58 +100,61 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="dot-grid-section" aria-hidden>
-          <DotGrid />
-          <video
-            className="dot-grid-section__video"
-            src="/images/renders/0001-0132-169.mp4"
-            autoPlay
-            muted
-            playsInline
-          />
-        </section>
-
-        <section className="gallery" aria-label="Galerie">
-          <div className="grid">
-            <div className="col-12">
-              <Gallery images={galleryImages} alt={hero.title} />
-            </div>
+        <section className="chimie" aria-labelledby="chimie-heading">
+          <div className="chimie__bg" aria-hidden>
+            <DotGrid variant="closing" fieldStart={0} maxSize={10} spacing={22} />
           </div>
-        </section>
-
-        <section
-          id="technologie"
-          className="features"
-          aria-labelledby="technologie-heading"
-        >
-          <div className="grid">
-            <header className="col-12 features__header">
-              <p className="eyebrow">{technologie.eyebrow}</p>
-              <h2 id="technologie-heading" className="section-title">
-                {technologie.title}
+          <div className="grid chimie__inner">
+            <header className="col-12 chimie__head">
+              <p className="eyebrow eyebrow--light">{chimie.eyebrow}</p>
+              <h2 id="chimie-heading" className="section-title chimie__title">
+                {chimie.title}
               </h2>
-              <p className="section-lead">{technologie.lead}</p>
+              <p className="section-lead chimie__lead">{chimie.lead}</p>
             </header>
 
-            {technologie.items.map((item) => (
-              <article key={item.title} className="col-4">
-                <div className="feature-card">
-                  <div
-                    className={`feature-card__icon feature-card__icon--${item.iconTone}`}
-                  >
-                    {item.icon}
-                  </div>
-                  <h3 className="feature-card__title">{item.title}</h3>
-                  <p className="feature-card__text">{item.text}</p>
+            {chimie.points.map((point) => (
+              <article key={point.title} className="col-12 col-4">
+                <div className="chimie-card">
+                  <h3 className="chimie-card__title">{point.title}</h3>
+                  <p className="chimie-card__text">{point.text}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
 
+        <section className="comparison" aria-labelledby="comparison-heading">
+          <div className="grid">
+            <header className="col-12 comparison__head">
+              <p className="eyebrow">{comparison.eyebrow}</p>
+              <h2 id="comparison-heading" className="section-title">
+                {comparison.title}
+              </h2>
+              <p className="section-lead">{comparison.lead}</p>
+            </header>
+
+            {comparison.columns.map((column) => (
+              <div key={column.name} className="col-12 col-6">
+                <div className={`compare-card compare-card--${column.tone}`}>
+                  <h3 className="compare-card__title">{column.name}</h3>
+                  <ul className="compare-list">
+                    {column.points.map((point) => (
+                      <li key={point} className="compare-list__item">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 2 — Applications */}
         <section
           id="applications"
-          className="features"
+          className="applications"
           aria-labelledby="applications-heading"
         >
           <div className="grid">
@@ -159,16 +167,20 @@ export default function Home() {
             </header>
 
             {applications.items.map((item) => (
-              <article key={item.title} className="col-4">
-                <div className="feature-card">
-                  <h3 className="feature-card__title">{item.title}</h3>
-                  <p className="feature-card__text">{item.text}</p>
+              <article key={item.title} className="col-12 col-4">
+                <div className="use-case">
+                  {item.image ? (
+                    <div className="use-case__media">
+                      <img src={item.image} alt="" aria-hidden />
+                    </div>
+                  ) : null}
+                  <h3 className="use-case__title">{item.title}</h3>
+                  <p className="use-case__text">{item.text}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
-
       </main>
 
       <div className="closing">
