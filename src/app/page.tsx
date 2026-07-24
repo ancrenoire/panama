@@ -1,6 +1,7 @@
 import content from "@/data/content.json";
 import DotGrid from "@/components/DotGrid";
 import Gallery from "@/components/Gallery";
+import MotifShowcase from "@/components/MotifShowcase";
 
 const galleryImages = [
   "/images/renders/panama-r-1.png",
@@ -16,8 +17,17 @@ const galleryImages = [
 ];
 
 export default function Home() {
-  const { brand, nav, hero, intro, technologie, applications, cta, footer } =
-    content;
+  const {
+    brand,
+    nav,
+    hero,
+    motifs,
+    process,
+    technologie,
+    applications,
+    cta,
+    footer,
+  } = content;
   const year = new Date().getFullYear();
 
   return (
@@ -28,7 +38,7 @@ export default function Home() {
             <a className="logo" href="#top" aria-label={brand.homeLabel}>
               <img
                 className="logo__image"
-                src={brand.logoSrc}
+                src="/images/Panama-logo-cropped-light.svg"
                 alt={brand.name}
                 width={140}
                 height={32}
@@ -70,40 +80,48 @@ export default function Home() {
                 </a>
               </div>
             </div>
-            <div className="col-5 hero__visual">
-              <div className="square-media">
-                <video
-                  className="square-media__video"
-                  src="/images/renders/0001-0252.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                />
-              </div>
+          </div>
+          <div className="hero__visual" aria-hidden>
+            <div className="square-media">
+              <video
+                className="square-media__video"
+                src="/images/renders/0001-0252.mp4"
+                autoPlay
+                muted
+                playsInline
+              />
             </div>
           </div>
         </section>
 
-        <section className="intro" aria-labelledby="intro-heading">
+        <section className="motifs" aria-labelledby="motifs-heading">
           <div className="grid">
-            <div className="col-12 intro__head">
-              <img
-                className="intro__icon"
-                src={intro.icon}
-                alt=""
-                width={64}
-                height={64}
+            <div className="col-12">
+              <MotifShowcase
+                eyebrow={motifs.eyebrow}
+                title={motifs.title}
+                icon={motifs.icon}
+                items={motifs.items}
               />
-              <h2 id="intro-heading" className="section-title intro__title">
-                {intro.title}
-              </h2>
             </div>
+          </div>
+        </section>
 
-            {intro.cards.map((card) => (
+        <section className="process" aria-labelledby="process-heading">
+          <div className="grid">
+            <header className="col-12 process__head">
+              <p className="eyebrow">{process.eyebrow}</p>
+              <h2 id="process-heading" className="section-title">
+                {process.title}
+              </h2>
+              <p className="section-lead">{process.lead}</p>
+            </header>
+
+            {process.cards.map((card) => (
               <div key={card.title} className="col-12 col-6">
                 <div className="intro-card">
                   <h3 className="intro-card__title">{card.title}</h3>
+                  <p className="intro-card__text">{card.text}</p>
                 </div>
               </div>
             ))}
@@ -117,7 +135,6 @@ export default function Home() {
             src="/images/renders/0001-0132-169.mp4"
             autoPlay
             muted
-            loop
             playsInline
           />
         </section>

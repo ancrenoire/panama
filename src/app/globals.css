@@ -176,9 +176,10 @@ button {
 }
 
 .site-header {
-  background: color-mix(in srgb, var(--platinum) 92%, transparent);
+  background: color-mix(in srgb, var(--prussian-blue) 88%, transparent);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--white);
 }
 
 @media (min-width: 768px) {
@@ -237,11 +238,11 @@ button {
   align-items: center;
   gap: 28px;
   font-size: 0.9375rem;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.66);
 }
 
 .site-nav a:hover {
-  color: var(--color-text);
+  color: var(--white);
 }
 
 @media (min-width: 768px) {
@@ -277,11 +278,11 @@ button {
   margin-top: 20px;
   max-width: 42ch;
   font-size: clamp(1.0625rem, 2vw, 1.25rem);
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -369,17 +370,19 @@ button {
   display: flex;
   align-items: center;
   padding-block: 96px ;
+  background: var(--prussian-blue);
+  color: var(--white);
 }
 
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  /* Very light, almost invisible primary-blue dot field behind the hero. */
-  opacity: 0.07;
+  /* Light dot field standing out against the dark hero background. */
+  opacity: 0.18;
 }
 
-/* Platinum wash over the dot field: opaque at the top-left, fading to fully
+/* Prussian wash over the dot field: opaque at the top-left, fading to fully
    transparent toward the bottom-right, so the animation gradually reveals. */
 .hero::after {
   content: "";
@@ -389,10 +392,15 @@ button {
   pointer-events: none;
   background: linear-gradient(
     135deg,
-    var(--platinum) 0%,
-    rgba(244, 246, 250, 0) 80%,
-    rgba(244, 246, 250, 0) 100%
+    var(--prussian-blue) 0%,
+    rgba(1, 7, 32, 0) 80%,
+    rgba(1, 7, 32, 0) 100%
   );
+}
+
+/* Light dots so the field reads on the dark hero. */
+.dot-grid--hero .dot {
+  background: var(--white);
 }
 
 .hero > .grid {
@@ -410,39 +418,180 @@ button {
 
 .hero__visual {
   margin-top: 40px;
+  padding-inline: 24px;
 }
 
 @media (min-width: 768px) {
   .hero__visual {
+    /* Square that fills the right third of the viewport, flush to the edge. */
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 33.333vw;
     margin-top: 0;
+    padding-inline: 0;
+    z-index: 2;
+  }
+
+  .hero__visual .square-media {
+    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
   }
 }
 
 /* -------------------------------------------------------------------------- */
-/* Intro                                                                      */
+/* Motif showcase (section 2)                                                 */
 /* -------------------------------------------------------------------------- */
 
-.intro {
+.motifs {
   background: var(--white);
   padding-block: 96px;
 }
 
-.intro__head {
+.motif {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .motif {
+    grid-template-columns: minmax(0, 488px) 1fr;
+    gap: 64px;
+  }
+}
+
+.motif__media {
+  background: #d9d9d9;
+  box-shadow: none;
+  border-radius: 24px;
+}
+
+.motif__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.motif__content {
+  position: relative;
+  padding-top: 24px;
+}
+
+.motif__star {
+  position: absolute;
+  top: -8px;
+  right: 0;
+  width: 48px;
+  height: 48px;
+}
+
+@media (min-width: 900px) {
+  .motif__star {
+    top: -24px;
+  }
+}
+
+.motif__eyebrow {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(1.375rem, 2vw, 1.75rem);
+  line-height: 1.1;
+  color: var(--color-text);
+}
+
+.motif__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.625rem, 2.6vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  margin-top: 6px;
+}
+
+.motif-list {
+  list-style: none;
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.motif-list__btn {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 6px 0;
+  text-align: left;
+  color: var(--color-text-muted);
+  transition: color var(--transition);
+}
+
+.motif-list__label {
+  font-size: 1.4375rem;
+  font-weight: 300;
+  transition: font-weight var(--transition), color var(--transition);
+}
+
+.motif-list__line {
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.motif-list__measure {
+  font-size: 1.4375rem;
+  font-weight: 600;
+  color: var(--prussian-blue);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.motif-list__btn.is-active {
+  color: var(--color-text);
+}
+
+.motif-list__btn.is-active .motif-list__label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.motif-list__btn.is-active .motif-list__line {
+  opacity: 1;
+  transform: scaleX(1);
+  color: var(--prussian-blue);
+}
+
+.motif-list__btn.is-active .motif-list__measure {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Process (design & transfert)                                              */
+/* -------------------------------------------------------------------------- */
+
+.process {
+  background: var(--white);
+  padding-block: 0 96px;
+}
+
+.process__head {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
-.intro__icon {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 24px;
-}
-
-.intro__title {
-  max-width: 20ch;
+.process__head .section-lead {
+  margin-inline: auto;
 }
 
 .intro-card {
@@ -452,9 +601,11 @@ button {
   padding: 40px 28px;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  gap: 12px;
   min-height: 180px;
 }
 
@@ -466,6 +617,12 @@ button {
   color: var(--color-action);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+.intro-card__text {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+  max-width: 32ch;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -780,7 +937,7 @@ button {
 }
 
 .cta-band__title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   letter-spacing: -0.02em;

@@ -27,7 +27,7 @@
   },
   "hero": {
     "eyebrow": "Bienvenue",
-    "title": "Le micro-transfert réinventé",
+    "title": "Micro-transfert printing",
     "lead": "PANAMA est un procédé de micro et nano-fabrication qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau, sans compromis sur la qualité.",
     "primaryCta": {
       "label": "Démarrer un projet",
@@ -38,15 +38,55 @@
       "href": "#technologie"
     }
   },
-  "intro": {
-    "title": "Transférez des motifs complexes avec une précision inégalée",
+  "motifs": {
+    "eyebrow": "Transférez",
+    "title": "des motifs complexes",
     "icon": "/images/Panama-star.svg",
-    "cards": [
+    "items": [
       {
-        "title": "Design"
+        "label": "motif 1",
+        "measure": "300nm",
+        "image": "/images/renders/panama-r-1.png"
       },
       {
-        "title": "Transfert"
+        "label": "motif 2",
+        "measure": "500nm",
+        "image": "/images/renders/Panama-rp-0.png"
+      },
+      {
+        "label": "motif 3",
+        "measure": "800nm",
+        "image": "/images/renders/masonry/image 14.png"
+      },
+      {
+        "label": "motif 4",
+        "measure": "1.2µm",
+        "image": "/images/renders/masonry/image 15.png"
+      },
+      {
+        "label": "motif 5",
+        "measure": "2µm",
+        "image": "/images/renders/masonry/image 16.png"
+      },
+      {
+        "label": "motif 6",
+        "measure": "5µm",
+        "image": "/images/renders/masonry/image 17.png"
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Procédé",
+    "title": "Le design dissocié du transfert",
+    "lead": "PANAMA sépare la création du motif de son dépôt, pour prototyper sur n'importe quel matériau sans compromis sur la qualité.",
+    "cards": [
+      {
+        "title": "Design",
+        "text": "Concevez le motif à l'échelle nanométrique, indépendamment du support final."
+      },
+      {
+        "title": "Transfert",
+        "text": "Déposez le motif avec une précision inégalée sur le matériau de votre choix."
       }
     ]
   },
