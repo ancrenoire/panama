@@ -34,18 +34,18 @@ export default function Home() {
               playsInline
             />
           </div>
-          <div className="grid">
+          <div className="grid hero__overlay">
             <div className="col-12 hero__content">
               <h1 id="hero-heading" className="hero__title">
                 {hero.title}
               </h1>
               <p className="hero__lead">{hero.lead}</p>
-              <div className="hero__actions">
-                <a className="btn btn--ghost" href={hero.secondaryCta.href}>
-                  {hero.secondaryCta.label}
-                </a>
-              </div>
             </div>
+          </div>
+          <div className="hero__actions">
+            <a className="btn btn--ghost" href={hero.secondaryCta.href}>
+              {hero.secondaryCta.label}
+            </a>
           </div>
         </section>
 
@@ -225,7 +225,11 @@ export default function Home() {
               <span className="site-footer__brand">{brand.name}</span>
               <p className="mono-label">© {year}</p>
             </div>
-            <div className="col-6 site-footer__meta" />
+            <div className="col-6 site-footer__meta">
+              <a className="site-footer__link" href="/gallery">
+                Galerie
+              </a>
+            </div>
           </div>
         </footer>
       </div>

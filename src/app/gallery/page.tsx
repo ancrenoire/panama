@@ -34,7 +34,11 @@ export default function GalleryPage() {
             <span className="site-footer__brand">{brand.name}</span>
             <p className="mono-label">© {year}</p>
           </div>
-          <div className="col-6 site-footer__meta" />
+          <div className="col-6 site-footer__meta">
+            <a className="site-footer__link" href="/">
+              Accueil
+            </a>
+          </div>
         </div>
       </footer>
     </div>

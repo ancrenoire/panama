@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import { useLenis } from "lenis/react";
 
 type NavLink = {
   label: string;
@@ -22,6 +23,13 @@ type Nav = {
   };
 };
 
+// Fraction of the hero the user must scroll through for the header background
+// to fully appear.
+const REVEAL_FRACTION = 0.7;
+
+// Ease-out cubic so the background eases in and settles gently near the end.
+const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
+
 export default function SiteHeader({
   brand,
   nav,
@@ -29,17 +37,31 @@ export default function SiteHeader({
   brand: Brand;
   nav: Nav;
 }) {
-  const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+  const update = useCallback((scroll: number) => {
+    const header = headerRef.current;
+    if (!header) return;
+    const hero = document.querySelector<HTMLElement>(".hero");
+    const heroHeight = hero?.offsetHeight ?? window.innerHeight;
+    const distance = Math.max(1, heroHeight * REVEAL_FRACTION);
+    const raw = Math.min(1, Math.max(0, scroll / distance));
+    header.style.setProperty("--header-progress", easeOutCubic(raw).toFixed(4));
   }, []);
 
+  // Driven by Lenis' animated scroll value so the background tracks the smooth
+  // scroll position frame-by-frame.
+  useLenis(({ scroll }) => update(scroll));
+
+  useEffect(() => {
+    update(window.scrollY);
+    const onResize = () => update(window.scrollY);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [update]);
+
   return (
-    <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
+    <header ref={headerRef} className="site-header">
       <div className="grid site-header__inner">
         <div className="col-6">
           <a className="logo" href="#top" aria-label={brand.homeLabel}>
