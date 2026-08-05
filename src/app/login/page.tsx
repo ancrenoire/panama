@@ -18,13 +18,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
   return (
     <main className="gate">
       <div className="gate__panel">
-        <img
-          className="gate__logo"
-          src={content.brand.logoSrc}
-          alt={content.brand.name}
-          width={140}
-          height={32}
-        />
         <form className="gate__form" action={unlock}>
           <label className="gate__label" htmlFor="password">
             Mot de passe
