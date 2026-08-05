@@ -241,8 +241,8 @@ export default function Home() {
               <p className="mono-label">© {year}</p>
             </div>
             <div className="col-6 site-footer__meta">
-              <a className="site-footer__link" href="/gallery">
-                Galerie
+              <a className="site-footer__link" href="/home">
+                Home
               </a>
             </div>
           </div>
