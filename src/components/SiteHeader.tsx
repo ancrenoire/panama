@@ -17,7 +17,7 @@ type Brand = {
 type Nav = {
   ariaLabel: string;
   links: NavLink[];
-  cta: {
+  cta?: {
     label: string;
     href: string;
   };
@@ -33,9 +33,11 @@ const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 export default function SiteHeader({
   brand,
   nav,
+  centerLogo = false,
 }: {
   brand: Brand;
   nav: Nav;
+  centerLogo?: boolean;
 }) {
   const headerRef = useRef<HTMLElement>(null);
 
@@ -61,7 +63,10 @@ export default function SiteHeader({
   }, [update]);
 
   return (
-    <header ref={headerRef} className="site-header">
+    <header
+      ref={headerRef}
+      className={`site-header${centerLogo ? " site-header--center-logo" : ""}`}
+    >
       <div className="grid site-header__inner">
         <div className="col-6">
           <a className="logo" href="#top" aria-label={brand.homeLabel}>
@@ -82,9 +87,11 @@ export default function SiteHeader({
               </a>
             ))}
           </nav>
-          <a className="btn btn--primary btn--sm" href={nav.cta.href}>
-            {nav.cta.label}
-          </a>
+          {nav.cta ? (
+            <a className="btn btn--primary btn--sm" href={nav.cta.href}>
+              {nav.cta.label}
+            </a>
+          ) : null}
         </div>
       </div>
     </header>

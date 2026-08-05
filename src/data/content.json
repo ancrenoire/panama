@@ -150,7 +150,7 @@
       {
         "title": "Cas d'usage 2",
         "text": "Placeholder — décrivez un deuxième cas d'application (secteur, bénéfice, résultat).",
-        "image": "/images/renders/masonry/image 19.png"
+        "image": "/images/renders/masonry/image 21.png"
       },
       {
         "title": "Cas d'usage 3",
@@ -165,10 +165,7 @@
     "lead": "L'ensemble des vidéos et images de la technologie PANAMA.",
     "videos": [
       "/images/renders/0001-0252-2.mp4",
-      "/images/renders/0001-0252.mp4",
-      "/images/renders/0001-0132.mp4",
-      "/images/renders/0001-0132-169.mp4",
-      "/images/renders/20plus.mp4"
+      "/images/renders/0001-0252.mp4"
     ],
     "images": [
       "/images/renders/panama-r-1.png",
@@ -178,7 +175,6 @@
       "/images/renders/masonry/image 16.png",
       "/images/renders/masonry/image 17.png",
       "/images/renders/masonry/image 18.png",
-      "/images/renders/masonry/image 19.png",
       "/images/renders/masonry/image 20.png",
       "/images/renders/masonry/image 21.png",
       "/images/renders/masonry/image 22.png"
@@ -194,6 +190,67 @@
     "secondaryCta": {
       "label": "Retour en haut",
       "href": "#top"
+    }
+  },
+  "brandGuide": {
+    "nav": {
+      "ariaLabel": "Navigation charte graphique",
+      "links": [
+        {
+          "label": "Identité",
+          "href": "#identity"
+        },
+        {
+          "label": "Rendus",
+          "href": "#renders"
+        }
+      ]
+    },
+    "hero": {
+      "eyebrow": "Charte graphique",
+      "title": "Panama — Guide de marque",
+      "lead": "Les fondamentaux visuels de Panama : logotype, éléments, motifs, typographie et rendus. Une référence vivante pour un usage cohérent de la marque."
+    },
+    "identity": {
+      "eyebrow": "Identité",
+      "title": "Identité visuelle",
+      "lead": "Le système d'identité Panama et ses règles d'usage.",
+      "logotype": {
+        "title": "Variations",
+        "text": "Le logotype existe en version foncée et blanche. Les versions foncées se posent sur fond clair, la version blanche sur fond foncé."
+      },
+      "construction": {
+        "title": "Construction",
+        "text": "La zone de protection se mesure sur la hauteur de l'icône. Aucun élément ne doit empiéter sur cet espace."
+      },
+      "elements": {
+        "title": "Éléments",
+        "text": "Les briques graphiques de la marque : icône, étoile et calque.",
+        "items": [
+          { "label": "Icône", "image": "/images/Panama-icon.svg", "tone": "light" },
+          { "label": "Icône blanche", "image": "/images/Panama-icon-white.svg", "tone": "dark" },
+          { "label": "Étoile", "image": "/images/Panama-star.svg", "tone": "light" },
+          { "label": "Calque", "image": "/images/Panama-layer.svg", "tone": "light" }
+        ]
+      },
+      "patterns": {
+        "title": "Motifs",
+        "text": "Les motifs de marque : la grille diagonale et le champ de points interactif."
+      },
+      "typography": {
+        "title": "Typographie",
+        "text": "Termina pour les titres, Geist pour le texte courant, Geist Mono pour les libellés techniques.",
+        "specimens": [
+          { "name": "Termina", "role": "Titres / Display", "className": "spec__sample--display" },
+          { "name": "Geist", "role": "Texte courant", "className": "spec__sample--sans" },
+          { "name": "Geist Mono", "role": "Libellés techniques", "className": "spec__sample--mono" }
+        ]
+      }
+    },
+    "renders": {
+      "eyebrow": "Rendus",
+      "title": "Rendus & captures",
+      "lead": "Vidéos et images de la technologie Panama."
     }
   }
 }

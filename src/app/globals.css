@@ -132,6 +132,10 @@ button {
   grid-column: span 12;
 }
 
+.col-3 {
+  grid-column: span 12;
+}
+
 .col-6 {
   grid-column: span 12;
 }
@@ -149,6 +153,10 @@ button {
 }
 
 @media (min-width: 768px) {
+  .col-3 {
+    grid-column: span 3;
+  }
+
   .col-6 {
     grid-column: span 6;
   }
@@ -205,6 +213,20 @@ button {
   align-items: center;
   justify-content: space-between;
   min-height: var(--header-height);
+  max-width: 1600px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+.site-header--center-logo .site-header__inner {
+  position: relative;
+}
+
+.site-header--center-logo .logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .site-header__inner > .col-6 {
@@ -439,6 +461,28 @@ button {
 .motifs {
   background: var(--white);
   padding-block: 96px;
+}
+
+.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  min-height: 280px;
+  padding: 48px 24px;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg);
+}
+
+.placeholder__label {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-text-muted);
 }
 
 .motif {
@@ -896,14 +940,29 @@ button {
   overflow: hidden;
   background: var(--prussian-blue);
   color: var(--white);
-  padding-block: 96px;
+  padding-block: 160px;
 }
 
 .chimie__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
-  opacity: 0.22;
+  opacity: 0.18;
+}
+
+/* Prussian wash over the dot field, mirroring the footer/closing reveal. */
+.chimie::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    var(--prussian-blue) 0%,
+    rgba(1, 7, 32, 0) 80%,
+    rgba(1, 7, 32, 0) 100%
+  );
 }
 
 .chimie__inner {
@@ -1366,4 +1425,202 @@ button {
 .gate__submit {
   width: 100%;
   margin-top: 8px;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Brand guide                                                                */
+/* -------------------------------------------------------------------------- */
+
+.slides {
+  padding-top: var(--header-height);
+  padding-bottom: clamp(48px, 8vw, 96px);
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+.slide {
+  width: 100%;
+  max-width: 1600px;
+  margin-inline: auto;
+  margin-block: clamp(24px, 4vw, 48px);
+  aspect-ratio: 16 / 9;
+  scroll-margin-top: calc(var(--header-height) + 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(24px, 3vw, 48px);
+  padding: clamp(28px, 4vw, 72px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+/* Inside a slide the grid fills the slide's own (already padded) width. */
+.slide .grid {
+  max-width: none;
+  padding-inline: 0;
+  margin-inline: 0;
+  align-items: start;
+}
+
+.slide__body {
+  flex: none;
+  width: 100%;
+}
+
+/* Renders slide grows past 16:9 to fit the gallery. */
+.slide--renders {
+  aspect-ratio: auto;
+  min-height: min(90vh, 900px);
+  justify-content: flex-start;
+}
+
+.slide--renders .slide__body {
+  flex: 1;
+}
+
+/* Logotype variations — full-bleed vertical split */
+.slide--split {
+  padding: 0;
+  overflow: hidden;
+}
+
+.split {
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.split__half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 72px);
+}
+
+.split__half--light {
+  background: var(--white);
+}
+
+.split__half--dark {
+  background: var(--prussian-blue);
+}
+
+.split__logo {
+  width: min(70%, 320px);
+  height: auto;
+}
+
+/* Reel — full-bleed video */
+.slide--reel {
+  padding: 0;
+  overflow: hidden;
+  background: var(--white);
+  border-color: transparent;
+}
+
+.reel__video {
+  flex: 1;
+  align-self: stretch;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+}
+
+/* Construction */
+.slide--construction {
+  background: var(--white);
+}
+
+.slide--construction .slide__body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.construction__image {
+  display: block;
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+}
+
+/* Motif interactif — full-bleed dot field */
+.slide--dots {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background: var(--prussian-blue);
+  border-color: transparent;
+}
+
+.slide--dots .dot-grid {
+  position: absolute;
+  inset: 0;
+}
+
+/* Prussian wash over the dot field, mirroring the /web footer reveal. */
+.slide--dots::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    var(--prussian-blue) 0%,
+    rgba(1, 7, 32, 0) 80%,
+    rgba(1, 7, 32, 0) 100%
+  );
+}
+
+/* Typographie */
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--platinum);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  height: 100%;
+}
+
+.spec__sample {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  color: var(--prussian-blue);
+}
+
+.spec__sample--display {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.spec__sample--sans {
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.spec__sample--mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.spec__name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--prussian-blue);
+}
+
+.spec__role {
+  color: var(--color-text-muted);
+}
+
+/* Rendus */
+.slide--renders .bento {
+  margin-top: clamp(16px, 2vw, 24px);
 }

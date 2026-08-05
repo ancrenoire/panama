@@ -66,6 +66,7 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Temporarily hidden
         <section className="motifs" aria-labelledby="motifs-heading">
           <div className="grid">
             <div className="col-12">
@@ -75,6 +76,20 @@ export default function Home() {
                 icon={motifs.icon}
                 items={motifs.items}
               />
+            </div>
+          </div>
+        </section>
+        */}
+
+        <section className="motifs" aria-label="Démonstration motifs complexes">
+          <div className="grid">
+            <div className="col-12">
+              <div className="placeholder">
+                <p className="eyebrow">Placeholder</p>
+                <p className="placeholder__label">
+                  Démonstration motifs complexes
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -102,7 +117,7 @@ export default function Home() {
 
         <section className="chimie" aria-labelledby="chimie-heading">
           <div className="chimie__bg" aria-hidden>
-            <DotGrid variant="closing" fieldStart={0} maxSize={10} spacing={22} />
+            <DotGrid variant="closing" fieldStart={0} maxSize={7} spacing={12} />
           </div>
           <div className="grid chimie__inner">
             <header className="col-12 chimie__head">
