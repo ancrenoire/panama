@@ -25,10 +25,6 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
           width={140}
           height={32}
         />
-        <h1 className="gate__title">Accès protégé</h1>
-        <p className="gate__lead">
-          Entrez le mot de passe pour continuer.
-        </p>
         <form className="gate__form" action={unlock}>
           <label className="gate__label" htmlFor="password">
             Mot de passe
