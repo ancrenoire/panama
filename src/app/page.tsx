@@ -58,7 +58,7 @@ export default function Home() {
         >
           <video
             className="reel__video"
-            src="/images/renders/0001-0324.mp4"
+            src="/images/renders/0001-0324-3.mp4"
             autoPlay
             muted
             loop
