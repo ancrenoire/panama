@@ -6,7 +6,6 @@ import SiteHeader from "@/components/SiteHeader";
 export default function Home() {
   const { brand, brandGuide, gallery } = content;
   const { identity, renders } = brandGuide;
-  const media = [...gallery.images];
   const year = new Date().getFullYear();
 
   return (
@@ -18,82 +17,48 @@ export default function Home() {
       />
 
       <main id="top" className="slides">
-        {/* Variations */}
         <section
           id="identity"
-          className="slide slide--split"
-          aria-label={identity.logotype.title}
+          className="slide slide--callout"
+          aria-labelledby="identity-heading"
         >
-          <div className="split">
-            <div className="split__half split__half--light">
-              <img
-                className="split__logo"
-                src="/images/Panama-logo-cropped.svg"
-                alt="Logotype Panama, version foncée"
-              />
+          <a
+            className="callout"
+            href={identity.download.href}
+            download="Panama-identity.zip"
+          >
+            <div className="callout__copy">
+              <h2 id="identity-heading" className="callout__title">
+                {identity.title}
+              </h2>
+              <p className="callout__lead">{identity.lead}</p>
             </div>
-            <div className="split__half split__half--dark">
-              <img
-                className="split__logo"
-                src="/images/Panama-logo-cropped-white.svg"
-                alt="Logotype Panama, version blanche"
-              />
-            </div>
-          </div>
+            <span className="btn btn--primary">{identity.download.label}</span>
+          </a>
         </section>
 
-        {/* Construction */}
-        <section
-          id="construction"
-          className="slide slide--construction"
-          aria-label={identity.construction.title}
-        >
-          <div className="slide__body">
+        {identity.pages.map((src, index) => (
+          <section
+            key={src}
+            className="slide slide--charte"
+            aria-label={`${identity.title} — ${index + 1}`}
+          >
             <img
-              className="construction__image"
-              src="/images/Panama-logo-construction.svg"
-              alt="Construction du logotype Panama"
+              className="charte__image"
+              src={src}
+              alt={`${identity.title}, page ${index + 1}`}
             />
-          </div>
-        </section>
+          </section>
+        ))}
 
-        {/* Motif interactif */}
         <section
-          id="elements"
-          className="slide slide--dots"
-          aria-label={identity.elements.title}
-        >
-          <DotGrid fieldStart={0} maxSize={8} spacing={14} />
-        </section>
-
-        {/* Typographie */}
-        <section
-          id="typography"
-          className="slide"
-          aria-label={identity.typography.title}
-        >
-          <div className="grid slide__body">
-            {identity.typography.specimens.map((spec) => (
-              <div key={spec.name} className="col-4">
-                <div className="spec">
-                  <p className={`spec__sample ${spec.className}`}>Aa</p>
-                  <p className="spec__name">{spec.name}</p>
-                  <p className="spec__role mono-label">{spec.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Reel */}
-        <section
-          id="reel"
+          id="renders"
           className="slide slide--reel"
           aria-label={renders.title}
         >
           <video
             className="reel__video"
-            src="/images/renders/0001-0252-2.mp4"
+            src="/images/renders/0001-0324.mp4"
             autoPlay
             muted
             loop
@@ -101,7 +66,6 @@ export default function Home() {
           />
         </section>
 
-        {/* Rendu carré */}
         <section
           id="render-square"
           className="slide slide--render-square"
@@ -117,14 +81,13 @@ export default function Home() {
           />
         </section>
 
-        {/* Rendus */}
         <section
-          id="renders"
+          id="gallery"
           className="slide slide--renders"
           aria-label={renders.title}
         >
           <div className="slide__body">
-            <Gallery images={media} alt={renders.title} />
+            <Gallery images={gallery.images} alt={renders.title} />
           </div>
         </section>
       </main>
@@ -139,11 +102,6 @@ export default function Home() {
             <div className="col-6">
               <span className="site-footer__brand">{brand.name}</span>
               <p className="mono-label">© {year}</p>
-            </div>
-            <div className="col-6 site-footer__meta">
-              <a className="site-footer__link" href="/web">
-                Site
-              </a>
             </div>
           </div>
         </footer>

@@ -27,7 +27,7 @@ export default function Home() {
           <div className="hero__bg" aria-hidden>
             <video
               className="hero__video"
-              src="/images/renders/0001-0252-2.mp4"
+              src="/images/renders/0001-0324.mp4"
               autoPlay
               muted
               loop

@@ -31,6 +31,6 @@ export const config = {
     /*
      * Protect all routes except Next internals and static public assets.
      */
-    "/((?!_next/static|_next/image|favicon.ico|images/|robots.txt).*)",
+    "/((?!_next/static|_next/image|favicon.ico|images/|archives/|robots.txt).*)",
   ],
 };

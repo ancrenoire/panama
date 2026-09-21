@@ -38,14 +38,14 @@ export default function Gallery({
             {isVideo(src) ? (
               <video
                 className="bento__item"
-                src={src}
+                src={encodeURI(src)}
                 autoPlay
                 muted
                 loop
                 playsInline
               />
             ) : (
-              <img className="bento__item" src={src} alt={alt} />
+              <img className="bento__item" src={encodeURI(src)} alt={alt} />
             )}
           </button>
         ))}
@@ -69,7 +69,7 @@ export default function Gallery({
           {isVideo(active) ? (
             <video
               className="lightbox__image"
-              src={active}
+              src={encodeURI(active)}
               autoPlay
               muted
               loop
@@ -80,7 +80,7 @@ export default function Gallery({
           ) : (
             <img
               className="lightbox__image"
-              src={active}
+              src={encodeURI(active)}
               alt={alt}
               onClick={(e) => e.stopPropagation()}
             />

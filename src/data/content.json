@@ -164,7 +164,7 @@
     "title": "Rendus & captures",
     "lead": "L'ensemble des vidéos et images de la technologie PANAMA.",
     "videos": [
-      "/images/renders/0001-0252-2.mp4",
+      "/images/renders/0001-0324.mp4",
       "/images/renders/0001-0252.mp4"
     ],
     "images": [
@@ -192,6 +192,182 @@
       "href": "#top"
     }
   },
+  "editorial": {
+    "eyebrow": "Sommaire éditorial",
+    "title": "Le récit du site Panama",
+    "lead": "Le site présente PANAMA comme un procédé de micro et nano-fabrication (le micro-transfert printing) qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau sans compromis de qualité. Le récit va de la promesse à la démonstration, au mécanisme, à la différenciation, puis aux usages et à la prise de contact.",
+    "nav": {
+      "ariaLabel": "Navigation éditoriale",
+      "links": [
+        {
+          "label": "Site",
+          "href": "/web"
+        }
+      ]
+    },
+    "sections": [
+      {
+        "name": "En-tête",
+        "goal": "Identifier la marque et offrir deux points d'entrée dans le discours : la technologie et les applications, plus un appel à démarrer un projet.",
+        "content": [
+          "Logotype Panama",
+          {
+            "label": "Navigation",
+            "items": [
+              "Technologie — ancre vers la section technique",
+              "Applications — ancre vers les cas d'usage"
+            ]
+          },
+          "CTA : Démarrer un projet — ancre vers le contact"
+        ]
+      },
+      {
+        "name": "Hero",
+        "goal": "Nommer le procédé et poser la promesse en une phrase : la dissociation du design et du transfert, sur tout matériau, sans compromis.",
+        "content": [
+          "Titre : Micro-transfert printing",
+          "Chapô : PANAMA est un procédé de micro et nano-fabrication qui dissocie le design du transfert, pour prototyper sur n'importe quel matériau, sans compromis sur la qualité.",
+          "Vidéo de fond : rendu technologique en boucle",
+          "CTA secondaire : Voir la technologie"
+        ]
+      },
+      {
+        "name": "Technologie",
+        "goal": "Cadrer PANAMA comme une rupture et ouvrir le déroulé : des motifs complexes jusqu'au transfert sur tout matériau.",
+        "content": [
+          "Surtitre : Technologie",
+          "Titre : Une technologie de rupture",
+          "Chapô : Des motifs complexes au transfert sur tout matériau : découvrez comment PANAMA repense chaque étape de la micro et nano-fabrication."
+        ]
+      },
+      {
+        "name": "Démonstration des motifs",
+        "goal": "Rendre visible la capacité à transférer des motifs complexes, de l'échelle nanométrique au micromètre.",
+        "content": [
+          "État actuel : placeholder « Démonstration motifs complexes »",
+          {
+            "label": "Contenu prévu (showcase interactif, actuellement masqué)",
+            "items": [
+              "Surtitre : Transférez",
+              "Titre : des motifs complexes",
+              "Six motifs, de 300 nm à 750 µm, avec images de rendus"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Procédé",
+        "goal": "Expliquer le mécanisme unique en deux temps : concevoir le motif, puis le déposer — indépendamment du support final.",
+        "content": [
+          "Surtitre : Procédé",
+          "Titre : Le design dissocié du transfert",
+          "Chapô : PANAMA sépare la création du motif de son dépôt, pour prototyper sur n'importe quel matériau sans compromis sur la qualité.",
+          {
+            "label": "Carte Design",
+            "items": [
+              "Concevez le motif à l'échelle nanométrique, indépendamment du support final."
+            ]
+          },
+          {
+            "label": "Carte Transfert",
+            "items": [
+              "Déposez le motif avec une précision inégalée sur le matériau de votre choix."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Chimie de surface",
+        "goal": "Rassurer sur l'accroche moléculaire : préparation de surface, compatibilité des substrats, tenue du motif transféré.",
+        "content": [
+          "Surtitre : Chimie de surface",
+          "Titre : Une accroche maîtrisée à l'échelle moléculaire",
+          "Chapô : placeholder — décrire comment la chimie de surface garantit l'adhésion et la fidélité du motif.",
+          {
+            "label": "Fonctionnalisation ciblée",
+            "items": [
+              "Placeholder — préparation de surface qui conditionne le transfert."
+            ]
+          },
+          {
+            "label": "Compatibilité matériaux",
+            "items": [
+              "Placeholder — familles de substrats compatibles (polymères, métaux, verre…)."
+            ]
+          },
+          {
+            "label": "Adhésion durable",
+            "items": [
+              "Placeholder — tenue mécanique et chimique du motif transféré."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Comparaison",
+        "goal": "Positionner PANAMA face à la lithographie conventionnelle, pour circuits électroniques ou micro-fluidiques.",
+        "content": [
+          "Surtitre : Au-delà de la lithographie",
+          "Titre : PANAMA face à la lithographie conventionnelle",
+          "Chapô : La technologie PANAMA optimise les étapes de lithographie classique pour la fabrication de circuits électroniques ou micro-fluidiques.",
+          {
+            "label": "Colonne Lithographie conventionnelle",
+            "items": [
+              "Placeholder — contrainte sur le choix du substrat.",
+              "Placeholder — étapes multiples en salle blanche.",
+              "Placeholder — coût et délais de prototypage élevés.",
+              "Placeholder — flexibilité limitée sur les géométries."
+            ]
+          },
+          {
+            "label": "Colonne PANAMA",
+            "items": [
+              "Placeholder — transfert sur n'importe quel matériau.",
+              "Placeholder — design dissocié du transfert.",
+              "Placeholder — prototypage rapide et petites séries.",
+              "Placeholder — résolution nanométrique préservée."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Applications",
+        "goal": "Ancrer la technologie dans des usages concrets auprès des startups, PME, équipes R&D, chercheurs et labos académiques en salle blanche.",
+        "content": [
+          "Surtitre : Applications",
+          "Titre : Des usages concrets",
+          "Chapô : PANAMA s'adresse aux startups, PME, équipes R&D, chercheurs et labos académiques en salle blanche, faisant du prototypage ou petites séries.",
+          {
+            "label": "Trois cas d'usage (placeholders + images)",
+            "items": [
+              "Cas d'usage 1 — à décrire (secteur, bénéfice, résultat).",
+              "Cas d'usage 2 — à décrire (secteur, bénéfice, résultat).",
+              "Cas d'usage 3 — à décrire (secteur, bénéfice, résultat)."
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Appel à l'action",
+        "goal": "Convertir l'intérêt en prise de contact, une fois le récit technique et les usages posés.",
+        "content": [
+          "Titre : Prêts quand vous l'êtes",
+          "Texte : placeholder — formulaire, liste d'attente ou lien de contact.",
+          "CTA principal : Nous écrire (mailto)",
+          "CTA secondaire : Retour en haut"
+        ]
+      },
+      {
+        "name": "Pied de page",
+        "goal": "Clôturer la page et renvoyer vers la charte graphique.",
+        "content": [
+          "Nom de marque : Panama",
+          "Copyright de l'année en cours",
+          "Lien : Home"
+        ]
+      }
+    ]
+  },
   "brandGuide": {
     "nav": {
       "ariaLabel": "Navigation charte graphique",
@@ -214,7 +390,25 @@
     "identity": {
       "eyebrow": "Identité",
       "title": "Identité visuelle",
-      "lead": "Le système d'identité Panama et ses règles d'usage.",
+      "lead": "Charte graphique et éléments d'identités (logotype, couleurs, polices, elements graphiques)",
+      "download": {
+        "href": "/archives/Panama-identity.zip",
+        "label": "Télécharger"
+      },
+      "pages": [
+        "/images/Panama-charte-images/Panama-charte_graphique-01.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-02.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-03.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-04.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-05.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-06.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-07.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-08.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-09.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-10.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-11.png",
+        "/images/Panama-charte-images/Panama-charte_graphique-12.png"
+      ],
       "logotype": {
         "title": "Variations",
         "text": "Le logotype existe en version foncée et blanche. Les versions foncées se posent sur fond clair, la version blanche sur fond foncé."
@@ -227,10 +421,26 @@
         "title": "Éléments",
         "text": "Les briques graphiques de la marque : icône, étoile et calque.",
         "items": [
-          { "label": "Icône", "image": "/images/Panama-icon.svg", "tone": "light" },
-          { "label": "Icône blanche", "image": "/images/Panama-icon-white.svg", "tone": "dark" },
-          { "label": "Étoile", "image": "/images/Panama-star.svg", "tone": "light" },
-          { "label": "Calque", "image": "/images/Panama-layer.svg", "tone": "light" }
+          {
+            "label": "Icône",
+            "image": "/images/Panama-icon.svg",
+            "tone": "light"
+          },
+          {
+            "label": "Icône blanche",
+            "image": "/images/Panama-icon-white.svg",
+            "tone": "dark"
+          },
+          {
+            "label": "Étoile",
+            "image": "/images/Panama-star.svg",
+            "tone": "light"
+          },
+          {
+            "label": "Calque",
+            "image": "/images/Panama-layer.svg",
+            "tone": "light"
+          }
         ]
       },
       "patterns": {
@@ -241,9 +451,21 @@
         "title": "Typographie",
         "text": "Termina pour les titres, Geist pour le texte courant, Geist Mono pour les libellés techniques.",
         "specimens": [
-          { "name": "Termina", "role": "Titres / Display", "className": "spec__sample--display" },
-          { "name": "Geist", "role": "Texte courant", "className": "spec__sample--sans" },
-          { "name": "Geist Mono", "role": "Libellés techniques", "className": "spec__sample--mono" }
+          {
+            "name": "Termina",
+            "role": "Titres / Display",
+            "className": "spec__sample--display"
+          },
+          {
+            "name": "Geist",
+            "role": "Texte courant",
+            "className": "spec__sample--sans"
+          },
+          {
+            "name": "Geist Mono",
+            "role": "Libellés techniques",
+            "className": "spec__sample--mono"
+          }
         ]
       }
     },
